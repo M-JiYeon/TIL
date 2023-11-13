@@ -22,3 +22,14 @@ def solution(participant, completion):
     answer = collections.Counter(participant) - collections.Counter(completion)
     return list(answer.keys())[0]
 ```
+
+### 폰켓몬
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/1845
+
+```py
+def solution(nums):
+    return min(len(set(nums)), int(len(nums) / 2))
+```
