@@ -110,3 +110,25 @@ def solution(genres, plays):
 
     return answer
 ```
+
+---
+
+## 스택/큐
+
+### 같은 숫자는 싫어
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/12906
+
+```py
+def solution(arr):
+    answer = []
+    answer.append(arr[0])
+    
+    for i in arr[1:]:
+        if i != answer[-1]:
+            answer.append(i)
+    
+    return answer
+```
