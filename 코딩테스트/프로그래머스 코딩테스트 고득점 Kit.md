@@ -149,3 +149,25 @@ def solution(progresses, speeds):
             Q[-1][1]+=1
     return [q[1] for q in Q]
 ```
+
+### 올바른 괄호
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/12909
+
+```py
+def solution(s):
+    answer = []
+    
+    for i in s:
+        if i == '(':
+            answer.append(i)
+        else:
+            if answer == []:
+                return False
+            else:
+                answer.pop()
+    
+    return len(answer) == 0
+```
