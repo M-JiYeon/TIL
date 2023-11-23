@@ -220,3 +220,27 @@ def solution(bridge_length, weight, truck_weights):
     
     return time
 ```
+
+### 주식가격
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42584
+
+```py
+from collections import deque
+
+def solution(prices):
+    answer = []
+    queue = deque(prices)
+    
+    while queue:
+        price = queue.popleft()
+        sec = 0
+        for q in queue:
+            sec += 1
+            if price > q:
+                break 
+        answer.append(sec)        
+    return answer
+```
