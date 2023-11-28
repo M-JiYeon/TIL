@@ -361,3 +361,16 @@ def solution(array, commands):
 def solution(array, commands):
     return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
 ```
+
+### 가장 큰 수
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42746
+
+```py
+def solution(numbers):
+    s = list(map(str, numbers))
+    s.sort(key=lambda x: x*3, reverse=True)
+    return str(int(''.join(s)))
+```
