@@ -374,3 +374,20 @@ def solution(numbers):
     s.sort(key=lambda x: x*3, reverse=True)
     return str(int(''.join(s)))
 ```
+
+### H-Index
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42747
+
+```py
+def solution(citations):
+    citations.sort(reverse=True)
+    
+    for i in range(len(citations)):
+        if(citations[i] < i+1):
+            return i
+
+    return len(citations)
+```
