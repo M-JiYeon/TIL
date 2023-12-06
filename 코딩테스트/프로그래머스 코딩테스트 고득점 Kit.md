@@ -560,3 +560,23 @@ def solution(n, wires):
         answer = min(answer, abs(temp[0] - temp[1]))
     return answer
 ```
+
+### 모음 사전
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/84512
+
+```py
+def solution(word):
+    answer = 0
+    dic = ['A', 'E', 'I', 'O', 'U']
+    li = [5**i for i in range(len(dic))]
+    
+    for i in range(len(word)-1,-1,-1):
+        idx = dic.index(word[i])
+        for j in range(5-i):
+            answer += li[j]*idx
+        answer+=1
+    return answer
+```
