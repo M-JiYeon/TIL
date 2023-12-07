@@ -580,3 +580,25 @@ def solution(word):
         answer+=1
     return answer
 ```
+
+---
+
+## 탐욕법(Greedy)
+
+### 체육복
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/42862
+
+```py
+def solution(n, lost, reserve):
+    r = [i for i in sorted(reserve) if i not in lost]
+    l = [i for i in sorted(lost) if i not in reserve]
+    for i in r:
+        if i-1 in l:
+            l.remove(i-1)
+        elif i+1 in l:
+            l.remove(i+1)
+    return n - len(l)
+```
