@@ -1107,3 +1107,35 @@ def rotate(table):
 
     return rotated
 ```
+
+## 이분탐색
+
+### 입국심사
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/43238
+
+```py
+def solution(n, times):
+    answer = 0
+    leng = len(times)
+    left = 1
+    right = (leng+1) * max(times)
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        count = 0
+        for time in times:
+            count += mid // time
+            if count >= n: break
+
+        if count >= n:
+            answer = mid
+            right = mid - 1
+        elif count < n:
+            left = mid + 1
+
+    return answer
+```
