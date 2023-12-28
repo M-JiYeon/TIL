@@ -1174,3 +1174,33 @@ def solution(distance, rocks, n):
         
     return answer
 ```
+
+## 그래프
+
+### 가장 먼 노드
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/49189
+
+```py
+def solution(n, edge):
+    adj = [[] for _ in range(n + 1)]
+    for v1, v2 in edge:
+        adj[v1].append(v2)
+        adj[v2].append(v1)
+    
+    answer = [0 for _ in range(n + 1)]
+    answer[1] = 1
+    
+    queue = [1]
+    
+    while queue:
+        cur = queue.pop(0)
+        for dest in adj[cur]:
+            if not answer[dest]:
+                answer[dest] = answer[cur] + 1
+                queue.append(dest)
+        
+    return answer.count(max(answer))
+```
