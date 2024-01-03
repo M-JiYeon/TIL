@@ -39,3 +39,16 @@ FROM PATIENT
 WHERE AGE <= 12 and GEND_CD = 'w'
 ORDER BY AGE DESC, PT_NAME ASC;
 ```
+
+### 3월에 태어난 여성 회원 목록 출력하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131120
+
+```SQL
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE GENDER = 'W' AND DATE_OF_BIRTH LIKE '%-03-%' AND TLNO IS NOT NULL
+ORDER BY MEMBER_ID ASC;
+```
