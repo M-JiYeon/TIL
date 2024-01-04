@@ -52,3 +52,15 @@ FROM MEMBER_PROFILE
 WHERE GENDER = 'W' AND DATE_OF_BIRTH LIKE '%-03-%' AND TLNO IS NOT NULL
 ORDER BY MEMBER_ID ASC;
 ```
+
+### 인기있는 아이스크림
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/133024
+
+```SQL
+SELECT FLAVOR
+FROM FIRST_HALF
+ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC;
+```
