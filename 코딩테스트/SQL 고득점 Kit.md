@@ -133,3 +133,17 @@ FROM FOOD_FACTORY
 WHERE ADDRESS LIKE '강원도%'
 ORDER BY FACTORY_ID ASC;
 ```
+
+### 재구매가 일어난 상품과 회원 리스트 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131536
+
+```SQL
+SELECT USER_ID, PRODUCT_ID
+FROM ONLINE_SALE
+GROUP BY USER_ID, PRODUCT_ID
+HAVING COUNT(PRODUCT_ID) >= 2
+ORDER BY USER_ID ASC, PRODUCT_ID DESC;
+```
