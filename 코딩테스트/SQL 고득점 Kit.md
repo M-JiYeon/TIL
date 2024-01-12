@@ -164,3 +164,27 @@ FROM OFFLINE_SALE
 WHERE SALES_DATE LIKE '2022-03%'
 ORDER BY SALES_DATE ASC, PRODUCT_ID ASC, USER_ID ASC;
 ```
+
+### 모든 레코드 조회하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59034
+
+```SQL
+SELECT * 
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+```
+
+### 역순 정렬하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59035
+
+```SQL
+SELECT NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC;
+```
