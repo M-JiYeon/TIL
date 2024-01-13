@@ -188,3 +188,29 @@ SELECT NAME, DATETIME
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID DESC;
 ```
+
+### 아픈 동물 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59036
+
+```SQL
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION = 'SICK'
+ORDER BY ANIMAL_ID ASC;
+```
+
+### 어린 동물 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59037
+
+```SQL
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE INTAKE_CONDITION != 'Aged'
+ORDER BY ANIMAL_ID ASC;
+```
