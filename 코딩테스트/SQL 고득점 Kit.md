@@ -238,3 +238,28 @@ SELECT ANIMAL_ID, NAME, DATETIME
 FROM ANIMAL_INS
 ORDER BY NAME ASC, DATETIME DESC;
 ```
+
+### 상위 n개 레코드
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59405
+
+```SQL
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME ASC
+LIMIT 1;
+```
+
+### 조건에 맞는 회원수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131535
+
+```SQL
+SELECT COUNT(*) AS USERS
+FROM USER_INFO
+WHERE (JOINED LIKE '2021%') AND (AGE BETWEEN 20 AND 29);
+```
