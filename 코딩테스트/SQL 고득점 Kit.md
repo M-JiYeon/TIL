@@ -288,3 +288,14 @@ WHERE PRICE = (SELECT MAX(PRICE) FROM FOOD_PRODUCT);
 SELECT MAX(PRICE) AS MAX_PRICE
 FROM PRODUCT;
 ```
+
+### 최댓값 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59415
+
+```SQL
+SELECT MAX(DATETIME) AS 시간
+FROM ANIMAL_INS;
+```
