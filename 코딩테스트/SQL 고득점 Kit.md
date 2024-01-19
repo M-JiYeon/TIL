@@ -299,3 +299,14 @@ FROM PRODUCT;
 SELECT MAX(DATETIME) AS 시간
 FROM ANIMAL_INS;
 ```
+
+### 최솟값 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59038
+
+```SQL
+SELECT MIN(DATETIME) AS 시간
+FROM ANIMAL_INS;
+```
