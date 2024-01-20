@@ -310,3 +310,25 @@ FROM ANIMAL_INS;
 SELECT MIN(DATETIME) AS 시간
 FROM ANIMAL_INS;
 ```
+
+### 동물 수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59406
+
+```SQL
+SELECT COUNT(*) AS count
+FROM ANIMAL_INS;
+```
+
+### 중복 제거하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59408
+
+```SQL
+SELECT COUNT(DISTINCT(NAME)) AS count
+FROM ANIMAL_INS;
+```
