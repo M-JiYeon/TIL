@@ -332,3 +332,24 @@ FROM ANIMAL_INS;
 SELECT COUNT(DISTINCT(NAME)) AS count
 FROM ANIMAL_INS;
 ```
+
+## GROUP BY
+
+### 즐겨찾기가 가장 많은 식당 정보 출력하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131123
+
+```SQL
+SELECT FOOD_TYPE, REST_ID, REST_NAME, FAVORITES
+FROM REST_INFO
+WHERE 
+    (FOOD_TYPE, FAVORITES)
+    IN (
+        SELECT FOOD_TYPE, MAX(FAVORITES)
+        FROM REST_INFO
+        GROUP BY FOOD_TYPE
+    )
+ORDER BY FOOD_TYPE DESC;
+```
