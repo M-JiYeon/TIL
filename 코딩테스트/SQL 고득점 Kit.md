@@ -428,3 +428,17 @@ WHERE APNT_YMD LIKE '2022-05%'
 GROUP BY MCDP_CD
 ORDER BY COUNT(*) ASC, MCDP_CD ASC;
 ```
+
+### 자동차 종류 별 특정 옵션이 포함된 자동차 수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/151137
+
+```SQL
+SELECT CAR_TYPE, COUNT(*) AS CARS
+FROM CAR_RENTAL_COMPANY_CAR 
+WHERE OPTIONS LIKE '%시트%'
+GROUP BY CAR_TYPE
+ORDER BY CAR_TYPE ASC;
+```
