@@ -474,3 +474,19 @@ FROM FIRST_HALF JOIN ICECREAM_INFO USING(FLAVOR)
 GROUP BY INGREDIENT_TYPE
 ORDER BY TOTAL_ORDER ASC;
 ```
+
+### 식품분류별 가장 비싼 식품의 정보 조회하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131116
+
+```SQL
+SELECT CATEGORY, PRICE, PRODUCT_NAME
+FROM FOOD_PRODUCT
+WHERE CATEGORY IN('과자', '국', '김치', '식용유')
+      AND
+      PRICE IN (SELECT MAX(PRICE) OVER (PARTITION BY CATEGORY)
+                FROM FOOD_PRODUCT) 
+ORDER BY PRICE DESC;
+```
