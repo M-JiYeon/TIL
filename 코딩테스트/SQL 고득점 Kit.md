@@ -490,3 +490,17 @@ WHERE CATEGORY IN('과자', '국', '김치', '식용유')
                 FROM FOOD_PRODUCT) 
 ORDER BY PRICE DESC;
 ```
+
+### 고양이와 개는 몇 마리 있을까
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59040
+
+```SQL
+SELECT ANIMAL_TYPE, COUNT(*) AS COUNT
+FROM ANIMAL_INS
+WHERE ANIMAL_TYPE IN ('CAT', 'DOG')
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE ASC;
+```
