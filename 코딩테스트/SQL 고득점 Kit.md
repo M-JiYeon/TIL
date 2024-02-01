@@ -504,3 +504,18 @@ WHERE ANIMAL_TYPE IN ('CAT', 'DOG')
 GROUP BY ANIMAL_TYPE
 ORDER BY ANIMAL_TYPE ASC;
 ```
+
+### 동명 동물 수 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59041
+
+```SQL
+SELECT NAME, COUNT(*) AS COUNT
+FROM ANIMAL_INS
+WHERE NAME IS NOT NULL
+GROUP BY NAME
+HAVING COUNT(*) >= 2
+ORDER BY NAME;
+```
