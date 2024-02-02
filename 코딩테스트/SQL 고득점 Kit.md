@@ -519,3 +519,20 @@ GROUP BY NAME
 HAVING COUNT(*) >= 2
 ORDER BY NAME;
 ```
+
+### 년, 월, 성별 별 상품 구매 회원 수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131532
+
+```SQL
+SELECT YEAR(SALES_DATE) AS YEAR,
+       MONTH(SALES_DATE) AS MONTH,
+       GENDER,
+       COUNT(DISTINCT USER_ID) AS USERS
+FROM ONLINE_SALE JOIN USER_INFO USING (USER_ID)
+WHERE GENDER IS NOT NULL 
+GROUP BY  YEAR, MONTH, GENDER
+ORDER BY  YEAR, MONTH, GENDER;
+```
