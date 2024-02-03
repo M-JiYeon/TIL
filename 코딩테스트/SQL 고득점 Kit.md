@@ -536,3 +536,17 @@ WHERE GENDER IS NOT NULL
 GROUP BY  YEAR, MONTH, GENDER
 ORDER BY  YEAR, MONTH, GENDER;
 ```
+
+### 입양 시각 구하기(1)
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59412
+
+```SQL
+SELECT HOUR(DATETIME) AS HOUR, COUNT(*) AS COUNT
+FROM ANIMAL_OUTS
+WHERE HOUR(DATETIME) BETWEEN '9' AND '19'
+GROUP BY HOUR
+ORDER BY HOUR;
+```
