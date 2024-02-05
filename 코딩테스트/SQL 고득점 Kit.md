@@ -566,3 +566,17 @@ FROM ( SELECT (ROW_NUMBER() OVER () - 1) AS HOUR
 GROUP BY HOUR
 ORDER BY HOUR ASC;
 ```
+
+### 가격대 별 상품 개수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131530
+
+```SQL
+SELECT TRUNCATE(PRICE, -4) AS PRICE_GROUP, 
+       COUNT(*) AS PRODUCTS
+FROM PRODUCT 
+GROUP BY PRICE_GROUP
+ORDER BY PRICE_GROUP ASC;
+```
