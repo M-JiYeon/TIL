@@ -666,3 +666,24 @@ ON F.FLAVOR = J.FLAVOR
 ORDER BY (F.TOTAL_ORDER + J.TOTAL_ORDER) DESC
 LIMIT 3;
 ```
+
+### 특정 기간동안 대여 가능한 자동차들의 대여비용 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/157339
+
+```SQL
+SELECT CAR_ID, C.CAR_TYPE, 
+       FLOOR(30*DAILY_FEE*(1-DISCOUNT_RATE/100)) AS FEE 
+FROM CAR_RENTAL_COMPANY_CAR AS C 
+     JOIN CAR_RENTAL_COMPANY_DISCOUNT_PLAN USING(CAR_TYPE) 
+WHERE C.CAR_TYPE IN ('세단', 'SUV') 
+      AND CAR_ID NOT IN (SELECT CAR_ID
+                         FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY 
+                         WHERE END_DATE >= '2022-11-1' 
+                               AND START_DATE <= '2022-11-30')
+      AND DURATION_TYPE = '30일 이상'
+HAVING FEE >= 500000 AND FEE < 2000000 
+ORDER BY FEE DESC, CAR_TYPE ASC, CAR_ID DESC;
+```
