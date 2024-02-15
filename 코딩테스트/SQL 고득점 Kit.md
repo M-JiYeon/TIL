@@ -715,3 +715,22 @@ ON B.AUTHOR_ID = A.AUTHOR_ID
 WHERE CATEGORY = '경제'
 ORDER BY PUBLISHED_DATE ASC;
 ```
+
+### 그룹별 조건에 맞는 식당 목록 출력하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131124
+
+```SQL
+SELECT MEMBER_NAME, REVIEW_TEXT, 
+       DATE_FORMAT(REVIEW_DATE,'%Y-%m-%d') AS REVIEW_DATE
+FROM MEMBER_PROFILE JOIN REST_REVIEW USING (MEMBER_ID)
+WHERE MEMBER_ID IN (SELECT MEMBER_ID
+                    FROM (SELECT *, DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS REVIEW_RANK
+                          FROM REST_REVIEW 
+                          GROUP BY MEMBER_ID) INLINE
+                    WHERE REVIEW_RANK = 1
+                   )
+ORDER BY REVIEW_DATE, REVIEW_TEXT ASC;
+```
