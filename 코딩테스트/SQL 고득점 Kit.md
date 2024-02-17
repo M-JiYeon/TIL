@@ -734,3 +734,16 @@ WHERE MEMBER_ID IN (SELECT MEMBER_ID
                    )
 ORDER BY REVIEW_DATE, REVIEW_TEXT ASC;
 ```
+
+### 없어진 기록 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59042
+
+```SQL
+SELECT ANIMAL_ID, O.NAME
+FROM ANIMAL_OUTS O LEFT JOIN ANIMAL_INS USING(ANIMAL_ID) 
+WHERE INTAKE_CONDITION IS NULL
+ORDER BY ANIMAL_ID, NAME ASC;
+```
