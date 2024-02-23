@@ -824,3 +824,17 @@ WHERE YEAR(JOINED)=2021
 GROUP BY YEAR, MONTH
 ORDER BY YEAR, MONTH ASC;
 ```
+
+### FrontEnd 개발자 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/276035
+
+```SQL
+SELECT DISTINCT ID, EMAIL, FIRST_NAME, LAST_NAME
+FROM SKILLCODES JOIN DEVELOPERS
+ON CODE & SKILL_CODE
+WHERE CATEGORY = 'Front End'
+ORDER BY ID ASC;
+```
