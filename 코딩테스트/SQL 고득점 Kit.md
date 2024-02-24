@@ -264,6 +264,22 @@ FROM USER_INFO
 WHERE (JOINED LIKE '2021%') AND (AGE BETWEEN 20 AND 29);
 ```
 
+### 업그레이드 된 아이템 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/273711
+
+```SQL
+SELECT I.ITEM_ID, ITEM_NAME, RARITY
+FROM ITEM_INFO AS I JOIN ITEM_TREE AS T
+ON I.ITEM_ID = T.ITEM_ID
+WHERE T.PARENT_ITEM_ID IN (
+    SELECT ITEM_ID FROM ITEM_INFO WHERE RARITY='RARE'
+    )
+ORDER BY ITEM_ID DESC;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
