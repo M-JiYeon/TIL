@@ -293,6 +293,19 @@ WHERE 'Python' IN (SKILL_1, SKILL_2, SKILL_3)
 ORDER BY ID ASC;
 ```
 
+### 조건에 맞는 개발자 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/276034
+
+```SQL
+SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
+FROM DEVELOPERS
+WHERE SKILL_CODE&(select sum(CODE) from SKILLCODES where NAME in('Python','C#'))
+ORDER BY ID ASC;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
