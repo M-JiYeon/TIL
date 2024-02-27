@@ -375,6 +375,18 @@ SELECT COUNT(DISTINCT(NAME)) AS count
 FROM ANIMAL_INS;
 ```
 
+### 조건에 맞는 아이템들의 가격의 총합 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/273709
+
+```SQL
+SELECT SUM(PRICE) AS TOTAL_PRICE
+FROM ITEM_INFO
+WHERE RARITY = 'LEGEND';
+```
+
 ## GROUP BY
 
 ### 즐겨찾기가 가장 많은 식당 정보 출력하기
