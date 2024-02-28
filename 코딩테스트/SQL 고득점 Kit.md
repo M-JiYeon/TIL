@@ -700,6 +700,19 @@ FROM USER_INFO
 WHERE AGE IS NULL;
 ```
 
+### ROOT 아이템 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/273710
+
+```SQL
+SELECT I.ITEM_ID, I.ITEM_NAME
+FROM ITEM_INFO AS I JOIN ITEM_TREE AS T
+ON I.ITEM_ID = T.ITEM_ID
+WHERE PARENT_ITEM_ID IS NULL;
+```
+
 ## JOIN
 
 ### 주문량이 많은 아이스크림들 조회하기
