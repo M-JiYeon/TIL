@@ -713,6 +713,20 @@ ON I.ITEM_ID = T.ITEM_ID
 WHERE PARENT_ITEM_ID IS NULL;
 ```
 
+### 업그레이드 할 수 없는 아이템 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/273712
+
+```SQL
+SELECT I.ITEM_ID, ITEM_NAME, RARITY
+FROM ITEM_INFO AS I LEFT JOIN ITEM_TREE AS T
+ON I.ITEM_ID = T.PARENT_ITEM_ID
+WHERE PARENT_ITEM_ID IS NULL
+ORDER BY ITEM_ID DESC;
+```
+
 ## JOIN
 
 ### 주문량이 많은 아이스크림들 조회하기
