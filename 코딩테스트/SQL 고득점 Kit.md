@@ -978,3 +978,20 @@ FROM RENTAL_DATE_AND_DURATION_TYPE AS R
 WHERE R.CAR_TYPE = '트럭'
 ORDER BY FEE DESC, HISTORY_ID DESC;
 ```
+
+### 조건에 부합하는 중고거래 상태 조회하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/164672
+
+```SQL
+SELECT BOARD_ID, WRITER_ID, TITLE, PRICE, 
+    CASE WHEN STATUS = "SALE" then "판매중"
+    WHEN STATUS = "RESERVED" then "예약중"
+    WHEN STATUS = "DONE" then "거래완료"
+    END AS STATUS
+FROM USED_GOODS_BOARD
+WHERE CREATED_DATE = "2022-10-05"
+ORDER BY BOARD_ID desc;
+```
