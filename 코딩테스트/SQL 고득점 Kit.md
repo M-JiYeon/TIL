@@ -995,3 +995,19 @@ FROM USED_GOODS_BOARD
 WHERE CREATED_DATE = "2022-10-05"
 ORDER BY BOARD_ID desc;
 ```
+
+### 조건별로 분류하여 주문상태 출력하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/131113
+
+```SQL
+SELECT ORDER_ID, PRODUCT_ID, DATE_FORMAT(OUT_DATE, '%Y-%m-%d'),
+    CASE WHEN DATE_FORMAT(OUT_DATE,'%m-%d') <= '05-01' THEN '출고완료'
+    WHEN DATE_FORMAT(OUT_DATE,'%m-%d') > '05-01' THEN '출고대기'
+    ELSE '출고미정'
+    END AS '출고여부'
+FROM FOOD_ORDER
+ORDER BY ORDER_ID ASC;
+```
