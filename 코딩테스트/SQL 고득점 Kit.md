@@ -1042,3 +1042,16 @@ WHERE USER_ID IN (
     GROUP BY WRITER_ID HAVING COUNT(*) >= 3)
 ORDER BY USER_ID DESC;
 ```
+
+### 특정 옵션이 포함된 자동차 리스트 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/157343
+
+```SQL
+SELECT *
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE OPTIONS LIKE '%네비게이션%'
+ORDER BY CAR_ID DESC;
+```
