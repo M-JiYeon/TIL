@@ -1085,3 +1085,16 @@ WHERE APNT_YMD LIKE '2022-04-13%'
       AND A.MCDP_CD = 'CS'
 ORDER BY APNT_YMD ASC;
 ```
+
+### 이름에 el이 들어가는 동물 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/59047
+
+```SQL
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE ANIMAL_TYPE = 'Dog' AND UPPER(NAME) LIKE '%EL%'
+ORDER BY NAME;
+```
