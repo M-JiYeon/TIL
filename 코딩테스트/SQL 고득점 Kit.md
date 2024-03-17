@@ -727,6 +727,17 @@ WHERE PARENT_ITEM_ID IS NULL
 ORDER BY ITEM_ID DESC;
 ```
 
+### 잡은 물고기의 평균 길이 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/293259
+
+```SQL
+SELECT ROUND(AVG(IFNULL(LENGTH, 10)), 2) AVERAGE_LENGTH
+FROM FISH_INFO;
+```
+
 ## JOIN
 
 ### 주문량이 많은 아이스크림들 조회하기
