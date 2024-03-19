@@ -647,6 +647,21 @@ GROUP BY PRICE_GROUP
 ORDER BY PRICE_GROUP ASC;
 ```
 
+### 조건에 맞는 사원 정보 조회하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/284527
+
+```SQL
+SELECT SUM(G.SCORE) AS SCORE, E.EMP_NO, E.EMP_NAME, E.POSITION, E.EMAIL
+FROM HR_EMPLOYEES E JOIN HR_GRADE G
+ON E.EMP_NO = G.EMP_NO
+GROUP BY G.EMP_NO
+ORDER BY SCORE DESC
+LIMIT 1;
+```
+
 ## IS NULL
 
 ### 경기도에 위치한 식품창고 목록 출력하기
