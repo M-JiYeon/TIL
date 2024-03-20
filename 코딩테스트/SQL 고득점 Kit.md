@@ -662,6 +662,21 @@ ORDER BY SCORE DESC
 LIMIT 1;
 ```
 
+### 노선별 평균 역 사이 거리 조회하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/284531
+
+```SQL
+SELECT ROUTE, 
+    CONCAT(ROUND(SUM(D_BETWEEN_DIST), 1), 'km') AS TOTAL_DISTANCE,
+    CONCAT(ROUND(AVG(D_BETWEEN_DIST), 2), 'km') AS AVERAGE_DISTANCE
+FROM SUBWAY_DISTANCE
+GROUP BY ROUTE
+ORDER BY ROUND(SUM(D_BETWEEN_DIST), 1) DESC;
+```
+
 ## IS NULL
 
 ### 경기도에 위치한 식품창고 목록 출력하기
