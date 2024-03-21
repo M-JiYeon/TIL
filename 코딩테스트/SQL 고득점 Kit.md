@@ -677,6 +677,19 @@ GROUP BY ROUTE
 ORDER BY ROUND(SUM(D_BETWEEN_DIST), 1) DESC;
 ```
 
+### 물고기 종류 별 잡은 수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/293257
+
+```SQL
+SELECT COUNT(*) AS FISH_COUNT, FISH_NAME
+FROM FISH_INFO JOIN FISH_NAME_INFO USING(FISH_TYPE)
+GROUP BY FISH_NAME
+ORDER BY FISH_COUNT DESC;
+```
+
 ## IS NULL
 
 ### 경기도에 위치한 식품창고 목록 출력하기
