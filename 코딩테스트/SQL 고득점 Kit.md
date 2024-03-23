@@ -662,6 +662,20 @@ ORDER BY SCORE DESC
 LIMIT 1;
 ```
 
+### 부서별 평균 연봉 조회하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/284529
+
+```SQL
+SELECT D.DEPT_ID, D.DEPT_NAME_EN, ROUND(AVG(SAL),0) AVG_SAL
+FROM HR_DEPARTMENT D JOIN HR_EMPLOYEES E
+ON D.DEPT_ID = E.DEPT_ID
+GROUP BY D.DEPT_ID
+ORDER BY AVG_SAL DESC;
+```
+
 ### 노선별 평균 역 사이 거리 조회하기
 
 ---
