@@ -647,6 +647,39 @@ GROUP BY PRICE_GROUP
 ORDER BY PRICE_GROUP ASC;
 ```
 
+### 언어별 개발자 분류하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/276036
+
+```SQL
+WITH GROUP_DEVELOPERS AS (
+    SELECT 
+        ID, 
+        EMAIL, 
+        GROUP_CONCAT(DISTINCT NAME, CATEGORY) AS GROUPED
+    FROM 
+        SKILLCODES
+    JOIN 
+        DEVELOPERS
+        ON DEVELOPERS.SKILL_CODE & SKILLCODES.CODE
+    GROUP BY 1,2
+)
+SELECT 
+    CASE
+        WHEN GROUPED LIKE '%Front%' AND GROUPED LIKE '%Python%' THEN 'A'
+        WHEN GROUPED LIKE '%C#%' THEN 'B' 
+        WHEN GROUPED LIKE '%Front%' THEN 'C'
+    END AS GRADE,
+    ID, 
+    EMAIL
+FROM
+    GROUP_DEVELOPERS
+HAVING GRADE IS NOT NULL
+ORDER BY GRADE, ID;
+```
+
 ### 조건에 맞는 사원 정보 조회하기
 
 ---
