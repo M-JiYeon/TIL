@@ -318,6 +318,19 @@ FROM FISH_INFO
 WHERE LENGTH IS NULL;
 ```
 
+### 가장 큰 물고기 10마리 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/298517
+
+```SQL
+SELECT ID, LENGTH
+FROM FISH_INFO
+ORDER BY LENGTH DESC, ID ASC
+LIMIT 10;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
