@@ -424,6 +424,24 @@ FROM ITEM_INFO
 WHERE RARITY = 'LEGEND';
 ```
 
+### 물고기 종류 별 대어 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/293261
+
+```SQL
+SELECT ID, FISH_NAME, LENGTH
+FROM FISH_INFO AS I JOIN FISH_NAME_INFO AS N 
+ON I.FISH_TYPE = N.FISH_TYPE
+WHERE (FISH_NAME, LENGTH) IN (
+    SELECT FISH_NAME , MAX(LENGTH) AS LENGTH
+    FROM FISH_INFO I JOIN FISH_NAME_INFO N
+    ON I.FISH_TYPE = N.FISH_TYPE
+    GROUP BY I.FISH_TYPE, FISH_NAME
+);
+```
+
 ### 잡은 물고기 중 가장 큰 물고기의 길이 구하기
 
 ---
