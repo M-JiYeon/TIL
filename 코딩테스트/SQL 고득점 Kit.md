@@ -835,6 +835,20 @@ GROUP BY MONTH
 ORDER BY MONTH ASC;
 ```
 
+### 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/298519
+
+```SQL
+SELECT COUNT(*) AS FISH_COUNT, MAX(LENGTH) AS MAX_LENGTH, FISH_TYPE
+FROM FISH_INFO
+GROUP BY FISH_TYPE
+HAVING AVG(IFNULL(LENGTH, 10)) > 33
+ORDER BY FISH_TYPE;
+```
+
 ## IS NULL
 
 ### 경기도에 위치한 식품창고 목록 출력하기
