@@ -343,6 +343,20 @@ FROM FISH_INFO JOIN FISH_NAME_INFO USING(FISH_TYPE)
 WHERE FISH_NAME IN ('BASS', 'SNAPPER');
 ```
 
+### 대장균들의 자식의 수 구하기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/299305
+
+```SQL
+SELECT A.ID, COUNT(B.ID) AS CHILD_COUNT
+FROM ECOLI_DATA A LEFT JOIN ECOLI_DATA B
+ON A.ID = B.PARENT_ID
+GROUP BY A.ID
+ORDER BY A.ID;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
