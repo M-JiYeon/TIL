@@ -357,6 +357,23 @@ GROUP BY A.ID
 ORDER BY A.ID;
 ```
 
+### 대장균의 크기에 따라 분류하기 1
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/299307
+
+```SQL
+SELECT ID, 
+    CASE 
+        WHEN SIZE_OF_COLONY <= 100 THEN 'LOW'
+        WHEN SIZE_OF_COLONY BETWEEN 101 AND 1000 THEN 'MEDIUM'
+        ELSE 'HIGH'
+    END AS 'SIZE'        
+FROM ECOLI_DATA
+ORDER BY ID ASC;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
