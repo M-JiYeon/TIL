@@ -374,6 +374,18 @@ FROM ECOLI_DATA
 ORDER BY ID ASC;
 ```
 
+### 특정 형질을 가지는 대장균 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/301646
+
+```SQL
+SELECT COUNT(*) AS COUNT
+FROM ECOLI_DATA
+WHERE GENOTYPE & 5 AND NOT GENOTYPE & 2;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
