@@ -386,6 +386,20 @@ FROM ECOLI_DATA
 WHERE GENOTYPE & 5 AND NOT GENOTYPE & 2;
 ```
 
+### 부모의 형질을 모두 가지는 대장균 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/301647
+
+```SQL
+SELECT P.ID, P.GENOTYPE, C.GENOTYPE AS PARENT_GENOTYPE
+FROM ECOLI_DATA AS P JOIN ECOLI_DATA AS C
+ON P.PARENT_ID = C.ID
+WHERE P.GENOTYPE & C.GENOTYPE = C.GENOTYPE
+ORDER BY P.ID;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
