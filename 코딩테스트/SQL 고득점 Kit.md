@@ -400,6 +400,24 @@ WHERE P.GENOTYPE & C.GENOTYPE = C.GENOTYPE
 ORDER BY P.ID;
 ```
 
+### 대장균의 크기에 따라 분류하기 2
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/301649
+
+```SQL
+SELECT ID, 
+    CASE 
+        WHEN NTILE(4) OVER (ORDER BY SIZE_OF_COLONY) = 1 THEN 'LOW'
+        WHEN NTILE(4) OVER (ORDER BY SIZE_OF_COLONY) = 2 THEN 'MEDIUM'
+        WHEN NTILE(4) OVER (ORDER BY SIZE_OF_COLONY) = 3 THEN 'HIGH'
+        ELSE 'CRITICAL'
+    END AS 'COLONY_NAME'        
+FROM ECOLI_DATA
+ORDER BY ID ASC;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
