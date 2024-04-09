@@ -418,6 +418,32 @@ FROM ECOLI_DATA
 ORDER BY ID ASC;
 ```
 
+### 특정 세대의 대장균 찾기
+
+---
+
+-   링크 : https://school.programmers.co.kr/learn/courses/30/lessons/301649
+
+```SQL
+WITH RECURSIVE ECOLI_TREE AS (
+    -- Non-Recursive
+    SELECT ID, PARENT_ID, 1 GENERATION
+    FROM ECOLI_DATA
+    WHERE PARENT_ID IS NULL
+    UNION ALL
+
+    -- Recursive
+    SELECT D.ID, D.PARENT_ID, T.GENERATION + 1
+    FROM ECOLI_DATA D INNER JOIN ECOLI_TREE T 
+    ON D.PARENT_ID = T.ID
+)
+
+SELECT ID
+FROM ECOLI_TREE
+WHERE GENERATION = 3
+ORDER BY ID ASC;
+```
+
 ## SUM, MAX, MIN
 
 ### 가격이 제일 비싼 식품의 정보 출력하기
